@@ -4,10 +4,10 @@ session_start();
 
  
 if ($_SERVER['QUERY_STRING'] == 'noname') {
-  session_unset();
+  unset($_SESSION['name']);
 }
 
-$name = $_SESSION['name'];
+$name = $_SESSION['name'] ?? ' Hello Guests';
 ?>
 
 <head>
