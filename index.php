@@ -1,16 +1,12 @@
 <?php 
 include('config/db_connect.php');
-// $conn = mysqli_connect('localhost','newroot','localhost*','PHP Tutorial MySQL');
 
-// if (!$conn) {
-//    echo 'Connection error:' . mysqli_connect_error();
-// }
-
-$sql = 'SELECT title,ingredients, id  FROM pizzas';
+$sql = 'SELECT title,ingredients, id  FROM pizzas ORDER BY created_at';
 $result = mysqli_query($conn,$sql);
 $pizzas = mysqli_fetch_all( $result, MYSQLI_ASSOC);
-// print_r($pizzas);
-// print_r(explode(',', $pizzas[0]['ingredients']));
+mysqli_free_result($result);
+mysqli_close($conn);
+
 ?>
 
 
