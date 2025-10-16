@@ -33,7 +33,6 @@ class User{
 
  $userTwo = new User('Vaspurik','dghcfds@gmail.uk');
 
-
  echo $userTwo->setName('Ramzes');
  echo $userTwo->getName();
 
